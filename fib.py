@@ -14,5 +14,5 @@ def fib_function(n):
 
 a = 0
 while a <= 10:
-    print(f"Dla n równego: {a} ciąg fibbonaciego jest równy: {fib_function(a)}")
+    print(f"Dla n równego: {a} liczba ciągu fibbonaciego jest równa: {fib_function(a)}")
     a = a + 1
