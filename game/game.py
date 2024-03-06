@@ -1,4 +1,5 @@
 import pygame
+from position import Position
 
 pygame.init()
 
@@ -15,6 +16,14 @@ WHITE = (255, 255, 255)
 # SETTING GAME
 screen = pygame.display.set_mode((WIDTH, WIDTH))
 screen.fill(WHITE)
+
+snake = [
+	Position(2, 2),
+	Position(3, 2),
+	Position(4, 2),
+	Position(5, 2),
+	Position(5, 1)
+]
 
 pygame.display.update()
 
