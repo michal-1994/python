@@ -25,26 +25,29 @@ snake = [
 	Position(5, 1)
 ]
 
+food = Position(11, 14)
+
 pygame.display.update()
 
-def draw_snake_part(x, y):
-	part_position = (x * CUBE_SIZE, y * CUBE_SIZE, CUBE_SIZE, CUBE_SIZE)
+def draw_snake_part(pos):
+	part_position = (pos.x * CUBE_SIZE, pos.y * CUBE_SIZE, CUBE_SIZE, CUBE_SIZE)
 
 	pygame.draw.rect(screen, GREEN, part_position)
 	pygame.display.update()
 
-def draw_food(x, y):
+def draw_food(pos):
 	radius = float(CUBE_SIZE) / 2
-	food_position = (x * CUBE_SIZE + radius, y * CUBE_SIZE + radius)
+	food_position = (pos.x * CUBE_SIZE + radius, pos.y * CUBE_SIZE + radius)
 
 	pygame.draw.circle(screen, GREEN, food_position, radius)
 	pygame.display.update()
 
-draw_food(0, 0)
-draw_food(13, 16)
-draw_food(10, 10)
-draw_food(12, 8)
-draw_food(18, 18)
+def draw_snake(snake):
+    for part in snake:
+        draw_snake_part(part)
+
+draw_snake(snake)
+draw_food(food)
 
 while True:
 	for event in pygame.event.get():
