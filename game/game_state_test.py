@@ -165,7 +165,7 @@ class GameStateTest(unittest.TestCase):
 
         from game_state import INITIAL_SNAKE
         self.assertEqual(INITIAL_SNAKE, state.snake)
-        self.assertEqual(state.food, state.snake)
+        self.assertFalse(state.food in state.snake)
         from game_state import INITIAL_DIRECTION
         self.assertEqual(INITIAL_DIRECTION, state.direction)
         self.assertEqual(25, state.field_size)
