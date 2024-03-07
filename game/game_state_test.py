@@ -125,5 +125,27 @@ class GameStateTest(unittest.TestCase):
 		]
         self.assertEqual(expected_state, state.snake)
 
+    def test_snake_eats_food(self):
+        state = GameState(
+			snake = [
+				Position(1, 2),
+				Position(2, 2),
+				Position(3, 2)
+			],
+			direction = Direction.UP,
+			food = Position(3, 1),
+			field_size = 20
+		)
+
+        state.step()
+        expected_state = [
+			Position(1, 2),
+			Position(2, 2),
+			Position(3, 2),
+			Position(3, 1)
+		]
+        self.assertEqual(expected_state, state.snake)
+        self.assertEqual(False, state.food in state.snake)
+
 if __name__ == '__main__':
 	unittest.main()
