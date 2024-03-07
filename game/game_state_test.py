@@ -13,7 +13,7 @@ class GameStateTest(unittest.TestCase):
 				Position(1, 4)
 			],
 			direction = Direction.RIGHT,
-   			food = Position(10, 10),
+			food = Position(10, 10),
 			field_size = 20
 		)
 
@@ -33,7 +33,7 @@ class GameStateTest(unittest.TestCase):
 				Position(1, 4)
 			],
 			direction = Direction.LEFT,
-   			food = Position(10, 10),
+			food = Position(10, 10),
 			field_size = 20
 		)
 
@@ -49,19 +49,19 @@ class GameStateTest(unittest.TestCase):
         state = GameState(
 			snake = [
 				Position(1, 2),
-				Position(1, 3),
-				Position(1, 4)
+				Position(2, 2),
+				Position(3, 2)
 			],
 			direction = Direction.UP,
-   			food = Position(10, 10),
+			food = Position(10, 10),
 			field_size = 20
 		)
 
         state.step()
         expected_state = [
-			Position(1, 1),
-			Position(1, 2),
-			Position(1, 3)
+			Position(2, 2),
+			Position(3, 2),
+			Position(3, 1)
 		]
         self.assertEqual(expected_state, state.snake)
 
@@ -69,19 +69,19 @@ class GameStateTest(unittest.TestCase):
         state = GameState(
 			snake = [
 				Position(1, 2),
-				Position(1, 3),
-				Position(1, 4)
+				Position(2, 2),
+				Position(3, 2)
 			],
 			direction = Direction.DOWN,
-   			food = Position(10, 10),
+			food = Position(10, 10),
 			field_size = 20
 		)
 
         state.step()
         expected_state = [
-			Position(1, 3),
-			Position(1, 4),
-			Position(1, 5)
+			Position(2, 2),
+			Position(3, 2),
+			Position(3, 3)
 		]
         self.assertEqual(expected_state, state.snake)
 
@@ -93,7 +93,7 @@ class GameStateTest(unittest.TestCase):
 				Position(2, 0)
 			],
 			direction = Direction.UP,
-   			food = Position(10, 10),
+			food = Position(10, 10),
 			field_size = 20
 		)
 
@@ -113,7 +113,7 @@ class GameStateTest(unittest.TestCase):
 				Position(19, 1)
 			],
 			direction = Direction.RIGHT,
-   			food = Position(10, 10),
+			food = Position(10, 10),
 			field_size = 20
 		)
 
