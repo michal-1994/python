@@ -1,5 +1,4 @@
 import pygame
-from position import Position
 from direction import Direction
 from game_state import GameState
 
@@ -8,14 +7,13 @@ CUBE_SIZE = 25
 CUBE_NUM = 20
 WIDTH = CUBE_SIZE * CUBE_NUM
 
-# COLORS
 BLUE = (0, 0, 255)
 GREEN = (0, 255, 0)
 WHITE = (255, 255, 255)
 
+# SETTING GAME
 pygame.init()
 
-# SETTING GAME
 screen = pygame.display.set_mode((WIDTH, WIDTH))
 screen.fill(WHITE)
 
@@ -41,7 +39,6 @@ def draw(snake, food):
     draw_food(food)
     pygame.display.update()
 
-
 state = GameState(
 	snake = None,
 	direction = None,
@@ -61,17 +58,18 @@ while True:
 			quit()
 
 		elif event.type == pygame.KEYDOWN:
+
 			if event.key == pygame.K_LEFT:
-				state.direction = Direction.LEFT
+				state.turn(Direction.LEFT)
 
 			elif event.key == pygame.K_RIGHT:
-				state.direction = Direction.RIGHT
+				state.turn(Direction.RIGHT)
 
 			elif event.key == pygame.K_UP:
-				state.direction = Direction.UP
+				state.turn(Direction.UP)
 
 			elif event.key == pygame.K_DOWN:
-				state.direction = Direction.DOWN
+				state.turn(Direction.DOWN)
 
 		state.step()
 		draw(state.snake, state.food)
