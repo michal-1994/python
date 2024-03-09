@@ -1,6 +1,6 @@
 import csv
 
-file_path = "C:/Users/Michal/OneDrive/Pulpit/Python/data_analysis/titanic.csv"
+file_path = "titanic.csv"
 file = open(file_path)
 data = [row for row in csv.reader(file)]
 file.close()
